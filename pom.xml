@@ -3,7 +3,7 @@
 
     <groupId>net.lariverosc</groupId>
     <artifactId>jesque-spring</artifactId>
-    <version>1.0.2-SNAPSHOT</version>
+    <version>1.0.2-SNAPSHOT-SLEUTH</version>
     <packaging>jar</packaging>
 
     <name>jesque-spring</name>
@@ -83,6 +83,18 @@
         </plugins>
     </build>
 
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>org.springframework.cloud</groupId>
+				<artifactId>spring-cloud-dependencies</artifactId>
+				<version>Brixton.RELEASE</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
+
     <dependencies>
         <dependency>
             <groupId>net.greghaines</groupId>
@@ -90,6 +102,12 @@
             <version>2.1.2-SNAPSHOT</version>
             <scope>provided</scope>
         </dependency>
+	
+		<!-- Sleuth -->
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-sleuth</artifactId>
+		</dependency>
 
         <!-- Spring -->
         <dependency>
